@@ -1,0 +1,133 @@
+*
+    box-sizing: border-box
+body
+    margin: 0
+    padding: 0
+header
+    z-index: 5
+    padding: 0 100px
+    background: #1B1B1B
+    width: 100%
+    box-sizing: border-box
+    .logo
+        color: #fff
+        height: 50px
+        float: left
+    nav
+        float: right
+        ul
+            margin: 0
+            padding: 0
+            display: flex
+            li
+                list-style: none
+                a
+                    height: 50px
+                    line-height: 50px
+                    padding: 0 20px
+                    color: #fff
+                    text-decoration: none
+                    &:hover, &.active
+                        background: red
+                        color: #fff
+                        text-decoration: none
+.menu-toggle
+    color: #fff
+    float: right
+    line-height: 50px
+    cursor: pointer
+    display: none
+@media screen and (max-width: 991px)
+    header
+        padding: 0px
+        nav
+            position: absolute
+            width: 100%
+            height: calc(100vh - 50px)
+            background: #333
+            top: 49px
+            left: -100%
+            transition: 0.5s
+            &.active
+                left: 0
+            ul
+                display: block
+                text-align: center
+
+    .menu-toggle
+        display: block
+    .bi-justify-right
+        &.active
+           display: none 
+    .bi-x
+        display: none
+        &.active
+           display: inline
+h2
+    font-size: 1.5rem!important
+.home
+    &__section
+        width: 60vw
+        height: calc(100vh + 50px)
+        z-index: -1
+        background-color: #1B1B1B
+        border-radius: 500em 0 0 500em
+        overflow: hidden
+        margin-top: -50px
+.service 
+    background-color: #1B1B1B
+    color: #fff
+    margin-top: -50px
+    z-index: 10
+    &__img img
+        max-width: 100%
+    &__arrow
+        display: block
+        position: relative
+        transition: width 2s ease
+        height: 0
+        padding: .5rem 0
+        width: 5rem
+        border-top: 2px solid
+        transform: translateZ(0)
+        &::after
+            content: ""
+            position: absolute
+            top: -1px
+            left: 100%
+            margin-left: -6px
+            border: 2px solid
+            border-bottom-width: 0
+            border-left-width: 0
+            width: 8px
+            height: 8px
+            transform: rotate(45deg)
+            transform-origin: top right
+    &__item
+        cursor: grab
+        &:hover .service
+            &__img img
+                transform: translate3d( -10px, -10px, -10px)
+            &__img
+                background-color: white
+            &__arrow
+                width: 100%
+                color: #ff541b
+                &::after
+                    color: #ff541b
+.develop__item:hover .bi-circle-half
+    background: #ff541b
+    border-radius: 50%
+.info
+    display: none
+    &.active
+        display: block
+    &__first
+        animation-name: bounceInRight
+        animation-duration: 1.5s
+    &__second
+        animation-name: bounceInLeft
+        animation-duration: 3s
+    &__third
+        animation-name: bounceInRight
+        animation-duration: 4.5s
