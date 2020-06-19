@@ -65,6 +65,23 @@ header
            display: inline
 h2
     font-size: 1.5rem!important
+.circle
+    position: fixed
+    z-index: 15
+    cursor: pointer
+    & .call
+        background: #ff541b
+        border-radius: 50%
+        transition: .2s ease
+        width: 20px
+        height: 20px
+        position: absolute
+        left: 0
+        top: 50vh
+    & .mess
+        position: absolute
+        left: 96vw
+        top: 50vh
 .home
     &__section
         width: 60vw
@@ -131,3 +148,6 @@ h2
     &__third
         animation-name: bounceInRight
         animation-duration: 4.5s
+    &__container
+        box-shadow: 0 40px 80px 0 rgba(27, 27, 27, 0.1);
+        margin-top: 30px
