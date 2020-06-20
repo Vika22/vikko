@@ -1,5 +1,7 @@
 *
     box-sizing: border-box
+html
+    scroll-behavior: smooth
 body
     margin: 0
     padding: 0
@@ -69,19 +71,54 @@ h2
     position: fixed
     z-index: 15
     cursor: pointer
+    width: 100%
     & .call
-        background: #ff541b
-        border-radius: 50%
-        transition: .2s ease
-        width: 20px
-        height: 20px
         position: absolute
-        left: 0
-        top: 50vh
-    & .mess
+        left: 1vw
+        top: calc(50vh - 60px)
+    & .mess 
         position: absolute
-        left: 96vw
-        top: 50vh
+        right: 1vw
+        top: calc(50vh - 60px)
+        & .mess__viber
+            transition: 1s ease 
+            transform: translate(60px, 0px)
+            margin-bottom: 5px   
+        & .mess__telega
+            transition: 1s ease 
+            transform: translate(60px, -60px)
+            margin-bottom: 5px 
+        & .mess__messanger
+            transition: 1s ease 
+            transform: translate(60px, -120px)
+            margin-bottom: 5px
+        &:hover 
+            & .contacts-hidden
+                visibility: visible
+            & .mess__viber
+                transform: translate(-20px, -60px)   
+            & .mess__telega
+                transform: translate(-20px, -60px) 
+            & .mess__messanger
+                transform: translate(-20px, -60px)
+    & img
+        height: 60px
+    & .contacts-main
+        z-index: 111
+    & .contacts-hidden
+        visibility: hidden
+    & .arrow
+        & img
+            width: 30px
+            height: 30px
+        & .up
+            position: absolute
+            right: 1vw
+            top: calc(10vh - 90px)
+        & .down
+            position: absolute
+            right: 1vw
+            top: calc(90vh - 40px)
 .home
     &__section
         width: 60vw
@@ -91,6 +128,8 @@ h2
         border-radius: 500em 0 0 500em
         overflow: hidden
         margin-top: -50px
+.flex-end
+    justify-content: flex-end
 .service 
     background-color: #1B1B1B
     color: #fff
@@ -121,7 +160,7 @@ h2
             transform: rotate(45deg)
             transform-origin: top right
     &__item
-        cursor: grab
+        cursor: pointer
         &:hover .service
             &__img img
                 transform: translate3d( -10px, -10px, -10px)
